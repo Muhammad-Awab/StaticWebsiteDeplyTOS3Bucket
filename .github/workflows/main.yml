@@ -3,7 +3,7 @@ name: Upload Website
 on:
   push:
     branches:
-    - master
+      - master
 
 jobs:
   deploy:
@@ -21,5 +21,5 @@ jobs:
 
     - name: Deploy static site to S3 bucket
       run: |
-        echo "SERVER: $aws-access-key-id"
-      
+        echo "AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}"
+        echo "AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}"
